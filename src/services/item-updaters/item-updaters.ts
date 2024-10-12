@@ -1,0 +1,28 @@
+import { Item } from '@models/item';
+import { ITEMS } from '@constants/items';
+import { updateNormalItem } from '@services/item-updaters/update-normal-item';
+import { updateGoodWine } from '@services/item-updaters/update-good-wine';
+import { updateBackstagePass } from '@services/item-updaters/update-backstage-pass';
+import { updateLegendaryItem } from '@services/item-updaters/update-legendary-item';
+import { updateSmellyItem } from '@services/item-updaters/update-smelly-item';
+
+type ItemUpdater = (item: Item) => Item;
+type ItemNames = (typeof ITEMS)[keyof typeof ITEMS];
+
+const itemUpdaters: Record<ItemNames, ItemUpdater> = {
+  [ITEMS.GOOD_WINE]: updateGoodWine,
+  [ITEMS.BACKSTAGE_PASSES_REFACTOR]: updateBackstagePass,
+  [ITEMS.BACKSTAGE_PASSES_HAXX]: updateBackstagePass,
+  [ITEMS.B_DAWG_KEYCHAIN]: updateLegendaryItem,
+  [ITEMS.DUPLICATE_CODE]: updateSmellyItem,
+  [ITEMS.LONG_METHODS]: updateSmellyItem,
+  [ITEMS.UGLY_VARIABLE_NAMES]: updateSmellyItem,
+};
+
+export const getItemUpdater = (itemName: ItemNames): ItemUpdater => {
+  return itemUpdaters[itemName] || updateNormalItem;
+};
+
+export const updateItems = (items: Item[]): Item[] => {
+  return items.map((item) => getItemUpdater(item.name as ItemNames)(item));
+};
