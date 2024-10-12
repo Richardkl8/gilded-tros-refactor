@@ -1,11 +1,36 @@
-# Gilded Tros Refactoring Kata
+# Gilded Tros - How to Use the Project
 
-This Kata is based on the Gilded Rose Kata, originally created by Terry Hughes (http://twitter.com/TerryHughes). It is already on GitHub [here](https://github.com/NotMyself/GildedRose). See also [Bobby Johnson's description of the kata](http://iamnotmyself.com/2011/02/13/refactor-this-the-gilded-rose-kata/) and [this version with multiple languages](https://github.com/emilybache/GildedRose-Refactoring-Kata).
-It was slightly rebranded by Axxes IT Consultancy, and renamed to Gilded Tros (with a wink to a local bar near the Axxes HQ ;)).
+## Getting Started
 
-## How to use this Kata
+### Install Dependencies
+First, install all the project dependencies by running:
+```sh
+npm install
+```
 
-The simplest way is to just clone the code and start hacking away improving the design.
-Instructions can be found in the GildedTrosRequirements document.
+## Running the Application
 
-Have fun and good luck!
+### Run the Simulation
+You can run a simulation of the Gilded Tros inventory update process. By default, the simulation runs for **4 days**. If you'd like to run it for a different number of days, provide that number as an argument:
+```sh
+npm run start
+```
+For example, to run a simulation for **10 days**, use:
+```sh
+npm run start 10
+```
+
+## Running Unit Tests
+To run all unit tests for the project and view the coverage report, use:
+```sh
+npm run test
+```
+This will execute all tests and provide a summary of the test results along with code coverage metrics.
+
+## Project Structure
+- **src**: Contains all source code, organized into the following folders:
+    - **models**: Defines the core data structures, such as `Item`.
+    - **constants**: Stores constant values used throughout the project, such as item names and quality limits, to maintain consistency and avoid magic numbers.
+    - **services**: Contains the business logic of the application, including functions that update item properties based on different rules. 
+- **test**: Contains the text test for the whole project.
+

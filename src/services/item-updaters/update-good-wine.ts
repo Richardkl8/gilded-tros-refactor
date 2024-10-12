@@ -6,9 +6,7 @@ export const updateGoodWine = (item: Item): Item => {
   const updatedItem = decrementSellIn(item);
 
   const qualityIncreaseAmount =
-    updatedItem.sellIn < QUALITY.MINIMUM_QUALITY_ITEM
-      ? QUALITY.INCREASE_AFTER_SELL_DATE
-      : QUALITY.INCREASE_BEFORE_SELL_DATE;
+    updatedItem.sellIn < 0 ? QUALITY.INCREASE_AFTER_SELL_DATE : QUALITY.INCREASE_BEFORE_SELL_DATE;
 
   return increaseQuality(updatedItem, qualityIncreaseAmount);
 };
