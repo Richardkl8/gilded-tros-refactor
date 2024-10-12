@@ -1,35 +1,43 @@
-import { Item } from '../src/item';
+import { Item, createItem, itemToString } from '../src/models/item';
 import { GildedTros } from '../src/gilded-tros';
+import { ITEMS } from '../src/constants/items';
 
 console.log('AXXES CODE KATA - GILDED TROS');
 
 const items: Item[] = [
-  new Item('Ring of Cleansening Code', 10, 20),
-  new Item('Good Wine', 2, 0),
-  new Item('Elixir of the SOLID', 5, 7),
-  new Item('B-DAWG Keychain', 0, 80),
-  new Item('B-DAWG Keychain', -1, 80),
-  new Item('Backstage passes for Re:Factor', 15, 20),
-  new Item('Backstage passes for Re:Factor', 10, 49),
-  new Item('Backstage passes for HAXX', 5, 49),
-  // these smelly items do not work properly yet
-  new Item('Duplicate Code', 3, 6),
-  new Item('Long Methods', 3, 6),
-  new Item('Ugly Variable Names', 3, 6),
+  createItem('Ring of Cleansening Code', 10, 20),
+  createItem('Elixir of the SOLID', 5, 7),
+  createItem(ITEMS.GOOD_WINE, 2, 0),
+  createItem(ITEMS.B_DAWG_KEYCHAIN, 0, 80),
+  createItem(ITEMS.B_DAWG_KEYCHAIN, -1, 80),
+  createItem(ITEMS.BACKSTAGE_PASSES_REFACTOR, 15, 20),
+  createItem(ITEMS.BACKSTAGE_PASSES_REFACTOR, 10, 49),
+  createItem(ITEMS.BACKSTAGE_PASSES_HAXX, 5, 49),
+  createItem(ITEMS.DUPLICATE_CODE, 3, 6),
+  createItem(ITEMS.LONG_METHODS, 3, 6),
+  createItem(ITEMS.UGLY_VARIABLE_NAMES, 3, 6),
 ];
 
-const app: GildedTros = new GildedTros(items);
+const runSimulationRecursive = (app: ReturnType<typeof GildedTros>, days: number, currentDay: number = 0): void => {
+  if (days <= 0) return;
 
-let days = 4;
-const args = process.argv.slice(2);
-if (args.length > 0) {
-  days = +args[0] + 1;
-}
-
-for (let i = 0; i < days; i++) {
-  console.log('-------- day ' + i + ' --------');
+  console.log('-------- day ' + currentDay + ' --------');
   console.log('name, sellIn, quality');
-  items.map((item) => item.toString()).forEach((item) => console.log(item));
+  app.items.forEach((item) => console.log(itemToString(item)));
   console.log();
-  app.updateQuality();
-}
+
+  const updatedApp = GildedTros(app.updateQuality());
+  runSimulationRecursive(updatedApp, days - 1, currentDay + 1);
+};
+
+const setAmountOfDays = () => {
+  let days = 4;
+  const args = process.argv.slice(2);
+  if (args.length > 0) {
+    days = +args[0] + 1;
+  }
+  return days;
+};
+
+const app = GildedTros(items);
+runSimulationRecursive(app, setAmountOfDays());

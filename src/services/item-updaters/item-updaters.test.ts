@@ -1,6 +1,6 @@
-import { createItem } from '@models/item';
-import { updateItems } from '@services/item-updaters/item-updaters';
-import { ITEMS } from '@constants/items';
+import { createItem } from '../../models/item';
+import { updateItems } from './item-updaters';
+import { ITEMS } from '../../constants/items';
 
 describe('updateItems', () => {
   it('should update multiple items correctly', () => {

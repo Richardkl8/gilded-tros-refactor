@@ -1,6 +1,6 @@
-import { createItem } from '@models/item';
-import { updateBackstagePass } from '@services/item-updaters/update-backstage-pass';
-import { ITEMS } from '@constants/items';
+import { createItem } from '../../models/item';
+import { updateBackstagePass } from './update-backstage-pass';
+import { ITEMS } from '../../constants/items';
 
 describe('updateBackstagePass', () => {
   it('should decrease sellIn by 1', () => {

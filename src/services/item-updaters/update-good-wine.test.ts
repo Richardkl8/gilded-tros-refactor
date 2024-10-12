@@ -1,6 +1,6 @@
-import { createItem } from '@models/item';
-import { updateGoodWine } from '@services/item-updaters/update-good-wine';
-import { ITEMS } from '@constants/items';
+import { createItem } from '../../models/item';
+import { updateGoodWine } from './update-good-wine';
+import { ITEMS } from '../../constants/items';
 
 describe('updateGoodWine', () => {
   it('should decrease sellIn by 1', () => {

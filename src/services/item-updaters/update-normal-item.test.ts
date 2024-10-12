@@ -1,5 +1,5 @@
-import { createItem } from '@models/item';
-import { updateNormalItem } from '@services/item-updaters/update-normal-item';
+import { createItem } from '../../models/item';
+import { updateNormalItem } from './update-normal-item';
 
 describe('updateNormalItem', () => {
   it('should decrease sellIn by 1', () => {

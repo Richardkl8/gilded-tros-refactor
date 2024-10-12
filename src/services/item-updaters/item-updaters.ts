@@ -1,10 +1,10 @@
-import { Item } from '@models/item';
-import { ITEMS } from '@constants/items';
-import { updateNormalItem } from '@services/item-updaters/update-normal-item';
-import { updateGoodWine } from '@services/item-updaters/update-good-wine';
-import { updateBackstagePass } from '@services/item-updaters/update-backstage-pass';
-import { updateLegendaryItem } from '@services/item-updaters/update-legendary-item';
-import { updateSmellyItem } from '@services/item-updaters/update-smelly-item';
+import { Item } from '../../models/item';
+import { ITEMS } from '../../constants/items';
+import { updateNormalItem } from './update-normal-item';
+import { updateGoodWine } from './update-good-wine';
+import { updateBackstagePass } from './update-backstage-pass';
+import { updateLegendaryItem } from './update-legendary-item';
+import { updateSmellyItem } from './update-smelly-item';
 
 type ItemUpdater = (item: Item) => Item;
 type ItemNames = (typeof ITEMS)[keyof typeof ITEMS];

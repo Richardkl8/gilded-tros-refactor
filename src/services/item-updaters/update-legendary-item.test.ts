@@ -1,7 +1,7 @@
-import { createItem } from '@models/item';
-import { updateLegendaryItem } from '@services/item-updaters/update-legendary-item';
-import { QUALITY } from '@constants/quality';
-import { ITEMS } from '@constants/items';
+import { createItem } from '../../models/item';
+import { updateLegendaryItem } from './update-legendary-item';
+import { QUALITY } from '../../constants/quality';
+import { ITEMS } from '../../constants/items';
 
 describe('updateLegendaryItem', () => {
   it('should maintain quality at maximum legendary quality', () => {

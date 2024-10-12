@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-duplicate-enum-values */
 export enum QUALITY {
   DECREASE_BEFORE_SELL_DATE = 1,
   DECREASE_AFTER_SELL_DATE = 2,

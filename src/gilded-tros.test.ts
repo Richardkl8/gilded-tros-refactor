@@ -1,6 +1,6 @@
-import { createItem, Item } from '@models/item';
-import { GildedTros } from '@/gilded-tros';
-import { ITEMS } from '@constants/items';
+import { createItem, Item } from './models/item';
+import { GildedTros } from './gilded-tros';
+import { ITEMS } from './constants/items';
 
 describe('GildedTros', () => {
   it('should update quality for all items', () => {

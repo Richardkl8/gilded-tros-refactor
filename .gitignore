@@ -33,6 +33,7 @@ TypeScript/dist
 # Maven
 target/
 dist/
+coverage/
 
 # JetBrains IDE
 .idea/

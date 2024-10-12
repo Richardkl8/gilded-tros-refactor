@@ -1,6 +1,6 @@
-import { Item } from '@models/item';
-import { decrementSellIn, increaseQuality } from '@services/item-updaters/utils/item-updaters-utils';
-import { QUALITY } from '@constants/quality';
+import { Item } from '../../models/item';
+import { decrementSellIn, increaseQuality } from './utils/item-updaters-utils';
+import { QUALITY } from '../../constants/quality';
 
 export const updateBackstagePass = (item: Item): Item => {
   const updatedItem = decrementSellIn(item);

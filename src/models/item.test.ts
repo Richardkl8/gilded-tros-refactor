@@ -1,4 +1,4 @@
-import { createItem, itemToString } from '@models/item';
+import { createItem, itemToString } from './item';
 
 describe('Item', () => {
   describe('createItem', () => {

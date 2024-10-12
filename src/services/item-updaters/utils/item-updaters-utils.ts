@@ -1,5 +1,5 @@
-import { Item } from '@models/item';
-import { QUALITY } from '@constants/quality';
+import { Item } from '../../../models/item';
+import { QUALITY } from '../../../constants/quality';
 
 export const decrementSellIn = (item: Item): Item => ({
   ...item,

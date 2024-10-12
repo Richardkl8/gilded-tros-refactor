@@ -5,8 +5,8 @@
   "scripts": {
     "build": "tsc",
     "prestart": "npm run build",
-    "start": "node dist/test/text-test-fixture.js",
-    "start-nodemon": "npx nodemon src/models/item.ts",
+    "start": "node dist/test/text-test-fixture.js 10",
+    "start-nodemon": "nodemon src/services/item-updaters/update-backstage-pass.ts",
     "test": "jest",
     "test:watch": "jest --watchAll"
   },

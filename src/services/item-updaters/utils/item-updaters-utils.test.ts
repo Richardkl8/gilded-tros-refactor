@@ -1,6 +1,6 @@
-import { decrementSellIn, increaseQuality, decreaseQuality } from '@services/item-updaters/utils/item-updaters-utils';
-import { ITEMS } from '@constants/items';
-import { QUALITY } from '@constants/quality';
+import { decrementSellIn, increaseQuality, decreaseQuality } from './item-updaters-utils';
+import { ITEMS } from '../../../constants/items';
+import { QUALITY } from '../../../constants/quality';
 
 describe('Utils functions', () => {
   describe('decrementSellIn', () => {

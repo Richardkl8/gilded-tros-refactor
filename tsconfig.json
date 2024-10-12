@@ -14,12 +14,8 @@
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true,
     "baseUrl": "./",
-    "paths": {
-      "@/*": ["src/*"],
-      "@constants/*": ["src/constants/*"],
-      "@models/*": ["src/models/*"],
-      "@services/*": ["src/services/*"]
-    }
   },
-  "include": ["**/src", "test/**.spec.ts", "test/text-test-fixture.ts"]
+  "include": ["**/src", "test/**.spec.ts",
+    "test/text-test-fixture.ts"
+  ]
 }
