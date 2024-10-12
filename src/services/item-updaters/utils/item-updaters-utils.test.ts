@@ -28,6 +28,13 @@ describe('Utils functions', () => {
 
       expect(updatedItem.quality).toBe(QUALITY.MAXIMUM_QUALITY_ITEM);
     });
+
+    it('should not increase quality if it is already at maximum', () => {
+      const item = { name: ITEMS.GOOD_WINE, sellIn: 5, quality: QUALITY.MAXIMUM_QUALITY_ITEM };
+      const updatedItem = increaseQuality(item);
+
+      expect(updatedItem.quality).toBe(QUALITY.MAXIMUM_QUALITY_ITEM);
+    });
   });
 
   describe('decreaseQuality', () => {
@@ -42,6 +49,13 @@ describe('Utils functions', () => {
     it('should not decrease the quality below the minimum allowed value', () => {
       const item = { name: 'Normal Item', sellIn: 5, quality: 2 };
       const updatedItem = decreaseQuality(item, 5);
+
+      expect(updatedItem.quality).toBe(QUALITY.MINIMUM_QUALITY_ITEM);
+    });
+
+    it('should not decrease quality if it is already at minimum', () => {
+      const item = { name: 'Normal Item', sellIn: 5, quality: QUALITY.MINIMUM_QUALITY_ITEM };
+      const updatedItem = decreaseQuality(item);
 
       expect(updatedItem.quality).toBe(QUALITY.MINIMUM_QUALITY_ITEM);
     });

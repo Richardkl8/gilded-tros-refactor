@@ -5,6 +5,6 @@ export const GildedTros = (items: Item[]) => {
   const updatedItems = items;
   return {
     items: updatedItems,
-    updateQuality: () => updateItems(updatedItems),
+    updateItems: () => updateItems(updatedItems),
   };
 };

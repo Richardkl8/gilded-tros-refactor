@@ -11,7 +11,7 @@ describe('GildedTros', () => {
       createItem('Normal Item', 10, 20),
     ];
     const gildedTros = GildedTros(items);
-    const updatedItems = gildedTros.updateQuality();
+    const updatedItems = gildedTros.updateItems();
 
     expect(updatedItems).toEqual([
       createItem(ITEMS.GOOD_WINE, 4, 21),

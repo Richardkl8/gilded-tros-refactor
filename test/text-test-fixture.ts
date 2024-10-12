@@ -26,7 +26,7 @@ const runSimulationRecursive = (app: ReturnType<typeof GildedTros>, days: number
   app.items.forEach((item) => console.log(itemToString(item)));
   console.log();
 
-  const updatedApp = GildedTros(app.updateQuality());
+  const updatedApp = GildedTros(app.updateItems());
   runSimulationRecursive(updatedApp, days - 1, currentDay + 1);
 };
 
