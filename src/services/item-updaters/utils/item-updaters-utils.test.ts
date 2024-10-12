@@ -1,4 +1,4 @@
-import { decrementSellIn, increaseQuality, decreaseQuality } from '@services/item-updaters/utils/utils';
+import { decrementSellIn, increaseQuality, decreaseQuality } from '@services/item-updaters/utils/item-updaters-utils';
 import { ITEMS } from '@constants/items';
 import { QUALITY } from '@constants/quality';
 

@@ -1,5 +1,5 @@
 import { Item } from '@models/item';
-import { decrementSellIn, decreaseQuality } from '@services/item-updaters/utils/utils';
+import { decrementSellIn, decreaseQuality } from '@services/item-updaters/utils/item-updaters-utils';
 import { QUALITY } from '@constants/quality';
 
 export const updateNormalItem = (item: Item) => {
