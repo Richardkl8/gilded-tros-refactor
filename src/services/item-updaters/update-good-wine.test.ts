@@ -10,18 +10,11 @@ describe('updateGoodWine', () => {
     expect(updatedItem.sellIn).toBe(9);
   });
 
-  it('should increase quality by 1 before sell date', () => {
+  it('should increase quality by 1', () => {
     const item = createItem(ITEMS.GOOD_WINE, 10, 20);
     const updatedItem = updateGoodWine(item);
 
     expect(updatedItem.quality).toBe(21);
-  });
-
-  it('should increase quality by 2 after sell date', () => {
-    const item = createItem(ITEMS.GOOD_WINE, 0, 20);
-    const updatedItem = updateGoodWine(item);
-
-    expect(updatedItem.quality).toBe(22);
   });
 
   it('should not increase quality beyond 50', () => {

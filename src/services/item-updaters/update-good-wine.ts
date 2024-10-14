@@ -5,8 +5,7 @@ import { QUALITY } from '../../constants/quality';
 export const updateGoodWine = (item: Item): Item => {
   const updatedItem = decrementSellIn(item);
 
-  const qualityIncreaseAmount =
-    updatedItem.sellIn < 0 ? QUALITY.INCREASE_AFTER_SELL_DATE : QUALITY.INCREASE_BEFORE_SELL_DATE;
+  const qualityIncreaseAmount = QUALITY.WINE_INCREASE;
 
   return increaseQuality(updatedItem, qualityIncreaseAmount);
 };
